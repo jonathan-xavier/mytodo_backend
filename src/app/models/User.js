@@ -24,6 +24,11 @@ const {Model,Sequelize,} = require('sequelize');
 
          return this;
      }
+
+     //verifica se a senha e igual
+     checkPassword(password){
+        return bcrypt.compare(password,this.password_hash);
+     }
  }
 
  module.exports = User;
