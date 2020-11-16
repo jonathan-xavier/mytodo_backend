@@ -2,7 +2,7 @@ module.exports = {
     dialect: 'mysql',
     host: 'localhost',
     username: 'root',
-    password: '88705717',
+    password: '123456',
     database: 'cadastronotas',
     define: {
         timestamps: true,

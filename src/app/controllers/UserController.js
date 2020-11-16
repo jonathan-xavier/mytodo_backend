@@ -1,6 +1,6 @@
 const Yup = require("yup");
 const User = require("../models/User");
-
+const Task = require('../models/Task');
 class UserController {
     async store(req, res) {
         //aplicando validação de entrada
@@ -78,6 +78,14 @@ class UserController {
       nome,
       email,
     });
+  }
+  //listar todos os usuários
+  async index(req,res){
+      const users = await User.findAll({
+        attributes:['id','nome','email','avatar_id'],
+        //include:[File],
+      })
+      return res.json(users);
   }
 }
 
